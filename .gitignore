@@ -1,0 +1,9 @@
+# For Terraform Remote State Back up 
+.terraform/
+*.tfstate
+*.backup
+#  include for scenario of multiple developers
+#.terraform.lock.hcl
+
+keyfile/
+

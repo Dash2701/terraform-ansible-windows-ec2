@@ -17,13 +17,5 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "tf-bucket-t3-pb-com"
-    key            = "iam/terraform.tfstate"
-    dynamodb_table = "tf-t3-state-locking"
-    region         = "us-east-1"
-    encrypt        = true
-  }
-
   required_version = ">= 0.13"
 }
