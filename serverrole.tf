@@ -13,15 +13,6 @@ resource "aws_iam_policy" "secretpolicy" {
 }
 
 
-# data "aws_iam_policy" "SSMFullAccess" {
-#   arn = "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
-# }
-
-# data "aws_iam_policy" "ec2ssm" {
-#   arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM"
-# }
-
-
 resource "aws_iam_role" "instancerole" {
   name = "InstanceRole"
   assume_role_policy = jsonencode(
@@ -53,23 +44,6 @@ resource "aws_iam_policy_attachment" "instance_attach_Secret_manager" {
   roles      = [aws_iam_role.instancerole.name]
   policy_arn = aws_iam_policy.secretpolicy.arn
 }
-
-
-
-
-# resource "aws_iam_policy_attachment" "instance_ssm_attachment" {
-#   name       = "instance_ssm_attachment"
-#   roles      = [aws_iam_role.instancerole.name]
-#   policy_arn = data.aws_iam_policy.SSMFullAccess.arn
-# }
-
-
-# resource "aws_iam_policy_attachment" "ec2_instance_ssm_attachment" {
-#   name       = "ec2_instance_ssm_attachment"
-#   roles      = [aws_iam_role.instancerole.name]
-#   policy_arn = data.aws_iam_policy.ec2ssm.arn
-# }
-
 
 
 
