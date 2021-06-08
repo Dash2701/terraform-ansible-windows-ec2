@@ -43,8 +43,4 @@ or for auto approve
 
 `terraform apply --auto-approve`
 
-5. Now in winhost file Replace the IP with Public IP of the new instance.(You can use local provisioner to template it also) and then run
-
-`ansible -m win_ping win -i winhost`
-
-it should show success, if not please go through the security group rule for the instance.
+5. Now in you use ansible basic authentication with username as Administrator and password with the one you have set in secrets manager
