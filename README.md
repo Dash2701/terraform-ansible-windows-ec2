@@ -31,7 +31,8 @@ Now for Terraform:
 
 `cd terraform-ansible-windows-ec2`
 
-3. Initialize the terraform 
+
+3. Replace your account Number and region in terraform.tfvars and then Initialize the terraform 
 
 `terraform init`
 
